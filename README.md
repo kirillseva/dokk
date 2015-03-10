@@ -1,4 +1,4 @@
-dokk: Docker utilities from R
+dokk: Docker utilities for R
 ===========
 
 Build docker images, run docker containers locally and remotely using docker-machine.
