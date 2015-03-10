@@ -1,9 +1,9 @@
-dokk: the R package that could
+dokk: Docker utilities from R
 ===========
 
-This repository is based off a basic template for R packages that already includes
-Travis and [covr](http://github.com/jimhester/covr) integration.
+Build docker images, run docker containers locally and remotely using docker-machine.
 
-Do not forget to set those up at https://travis-ci.org/ and https://coveralls.io/
-
-But soon it will be much more than that!
+Pre-requisites:
+* docker (```brew install docker```)
+* boot2docker (```brew cask install boot2docker```, check http://caskroom.io)
+* docker-machine (```brew cask install docker-machine```)
