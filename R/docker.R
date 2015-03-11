@@ -28,7 +28,7 @@ build_image <- function(machine_name, dir = getwd(), params = "") {
 #' @param machine_name character. Existing Docker Machine machine_name.
 #' @param image character. A hash or a tag of docker image to be run.
 #' @param params character. Additional parameters for \code{docker run}, i.e. \code{-ti}.
-#' @param params character. The command to be executed in the container. Leave blank for default CMD.
+#' @param command character. The command to be executed in the container. Leave blank for default CMD.
 #'
 #' @export
 run_image <- function(machine_name, image, params = "", command = "") {
