@@ -13,7 +13,7 @@ run_image(machine_name, image, params = "", command = "")
 
 \item{params}{character. Additional parameters for \code{docker run}, i.e. \code{-ti}.}
 
-\item{params}{character. The command to be executed in the container. Leave blank for default CMD.}
+\item{command}{character. The command to be executed in the container. Leave blank for default CMD.}
 }
 \description{
 Run your container in the docker machine
