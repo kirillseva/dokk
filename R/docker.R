@@ -3,23 +3,31 @@
 #' @param machine_name character. Existing Docker Machine machine_name.
 #' @param dir character. Directory that contains a Dockerfile
 #' @param params character. Additional parameters for \code{docker build}
+#' @param intern logical. If set to TRUE the building process will be invisible,
+#' and the function will return the hash of the built image. If false,
+#' the build steps will be shown, but the function will return the exit status
 #'
 #' @export
-build_image <- function(machine_name, dir = getwd(), params = "") {
+build_image <- function(machine_name, dir = getwd(), params = "", intern = TRUE) {
   stopifnot(is.character(dir) && length(dir) == 1)
   stopifnot(is.character(params) && length(params) == 1)
   stopifnot(is.character(machine_name) && length(machine_name) == 1)
 
   flags <- paste0("$(docker-machine config ", machine_name, ")")
   cat("Building your image...\n")
-  built <- system(paste0("docker ", flags, " build ", params, " ", dir), intern = TRUE)
-  if(str_split(built[length(built)], " ")[[1]][1] == "Successfully") {
-    hash <- str_split(built[length(built)], " ")[[1]][3]
-    cat("Successfully built ", hash, "\n")
-    return(hash)
+  if (is.TRUE(intern)) {
+    built <- system(paste0("docker ", flags, " build ", params, " ", dir), intern = TRUE)
+    if(str_split(built[length(built)], " ")[[1]][1] == "Successfully") {
+      hash <- str_split(built[length(built)], " ")[[1]][3]
+      cat("Successfully built ", hash, "\n")
+      return(hash)
+    } else {
+      cat("Something went wrong!\n")
+      print(built)
+      return(FALSE)
+    }
   } else {
-    cat("Something went wrong!\n")
-    print(built)
+    system2("docker", paste0(flags, " build ", params, " ", dir))
   }
 }
 

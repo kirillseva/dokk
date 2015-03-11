@@ -4,7 +4,7 @@
 \alias{build_image}
 \title{Run \code{docker build} in a directory}
 \usage{
-build_image(machine_name, dir = getwd(), params = "")
+build_image(machine_name, dir = getwd(), params = "", intern = TRUE)
 }
 \arguments{
 \item{machine_name}{character. Existing Docker Machine machine_name.}
@@ -12,6 +12,10 @@ build_image(machine_name, dir = getwd(), params = "")
 \item{dir}{character. Directory that contains a Dockerfile}
 
 \item{params}{character. Additional parameters for \code{docker build}}
+
+\item{intern}{logical. If set to TRUE the building process will be invisible,
+and the function will return the hash of the built image. If false,
+the build steps will be shown, but the function will return the exit status}
 }
 \description{
 Run \code{docker build} in a directory
