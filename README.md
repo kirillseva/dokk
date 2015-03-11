@@ -5,5 +5,4 @@ Build docker images, run docker containers locally and remotely using docker-mac
 
 Pre-requisites:
 * docker (```brew install docker```)
-* boot2docker (```brew cask install boot2docker```, check http://caskroom.io)
-* docker-machine (```brew cask install docker-machine```)
+* docker-machine (```brew cask install docker-machine```, check http://caskroom.io)
