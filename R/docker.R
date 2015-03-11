@@ -8,7 +8,7 @@
 #' the build steps will be shown, but the function will return the exit status
 #'
 #' @export
-build_image <- function(machine_name, dir = getwd(), params = "", intern = TRUE) {
+build_image <- function(machine_name, dir = ".", params = "", intern = TRUE) {
   stopifnot(is.character(dir) && length(dir) == 1)
   stopifnot(is.character(params) && length(params) == 1)
   stopifnot(is.character(machine_name) && length(machine_name) == 1)
@@ -16,7 +16,7 @@ build_image <- function(machine_name, dir = getwd(), params = "", intern = TRUE)
   flags <- paste0("$(docker-machine config ", machine_name, ")")
   cat("Building your image...\n")
   if (isTRUE(intern)) {
-    built <- system(paste0("docker ", flags, " build ", params, " ", dir), intern = TRUE)
+    built <- system(paste0("docker ", flags, " build ", params, " ", dir), intern = intern)
     if(str_split(built[length(built)], " ")[[1]][1] == "Successfully") {
       hash <- str_split(built[length(built)], " ")[[1]][3]
       cat("Successfully built ", hash, "\n")
@@ -27,7 +27,7 @@ build_image <- function(machine_name, dir = getwd(), params = "", intern = TRUE)
       FALSE
     }
   } else {
-    system2("docker", paste0(flags, " build ", params, " ", dir))
+    system(paste0("docker ", flags, " build ", params, " ", dir))
   }
 }
 

@@ -4,7 +4,7 @@
 \alias{build_image}
 \title{Run \code{docker build} in a directory}
 \usage{
-build_image(machine_name, dir = getwd(), params = "", intern = TRUE)
+build_image(machine_name, dir = ".", params = "", intern = TRUE)
 }
 \arguments{
 \item{machine_name}{character. Existing Docker Machine machine_name.}
