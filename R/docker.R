@@ -15,16 +15,16 @@ build_image <- function(machine_name, dir = getwd(), params = "", intern = TRUE)
 
   flags <- paste0("$(docker-machine config ", machine_name, ")")
   cat("Building your image...\n")
-  if (is.TRUE(intern)) {
+  if (isTRUE(intern)) {
     built <- system(paste0("docker ", flags, " build ", params, " ", dir), intern = TRUE)
     if(str_split(built[length(built)], " ")[[1]][1] == "Successfully") {
       hash <- str_split(built[length(built)], " ")[[1]][3]
       cat("Successfully built ", hash, "\n")
-      return(hash)
+      hash
     } else {
       cat("Something went wrong!\n")
       print(built)
-      return(FALSE)
+      FALSE
     }
   } else {
     system2("docker", paste0(flags, " build ", params, " ", dir))
