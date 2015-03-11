@@ -9,7 +9,9 @@ machine_AWS(name, vpc_id, cores = 2, ami = "ami-4ae27e22",
   zone = "a", iam = NULL, session_token = NULL, subnet_id = NULL)
 }
 \arguments{
-\item{name}{character. Name of the machine.}
+\item{name}{character. Required. The name of the machine.}
+
+\item{vpc_id}{character. Required. The VPC id. Get it from AWS console.}
 
 \item{cores}{integer. Number of cores. More cores = more expensive!}
 
@@ -23,6 +25,8 @@ If you do, then see https://docs.docker.com/machine/#drivers for more details.}
 \item{security_group}{character. AWS VPC security group name. Default: docker-machine}
 
 \item{zone}{character.  The AWS zone launch the instance in (i.e. one of a,b,c,d,e). Default: a}
+
+\item{iam}{character. IAM role for the instance.}
 
 \item{session_token}{character. Your session token for the Amazon Web Services API.}
 

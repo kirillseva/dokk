@@ -23,7 +23,8 @@ machine_local <- function(name) {
 #'
 #' Creates an EC2 instance for you.
 #'
-#' @param name character. Name of the machine.
+#' @param name character. Required. The name of the machine.
+#' @param vpc_id character. Required. The VPC id. Get it from AWS console.
 #' @param cores integer. Number of cores. More cores = more expensive!
 #' @param ami character. AMI to use. Don't touch if you don't know what you are doing.
 #' If you do, then see https://docs.docker.com/machine/#drivers for more details.
@@ -33,6 +34,7 @@ machine_local <- function(name) {
 #' @param security_group character. AWS VPC security group name. Default: docker-machine
 #' @param session_token character. Your session token for the Amazon Web Services API.
 #' @param subnet_id character. AWS VPC subnet id.
+#' @param iam character. IAM role for the instance.
 #' @param zone character.  The AWS zone launch the instance in (i.e. one of a,b,c,d,e). Default: a
 #'
 #' @export
