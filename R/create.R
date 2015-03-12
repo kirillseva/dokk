@@ -53,7 +53,7 @@ machine_AWS <- function(name, vpc_id, cores = 2, ami = "ami-4ae27e22",
   stopifnot(is.character(name) && length(name) == 1)
   stopifnot(is.character(ami) && length(ami) == 1)
 
-  if(!cores %in% names(machines)) stop(productivus::pp("Choose a valid number of cores from: #{paste(names(machines), sep='; ')}"))
+  if(!cores %in% names(machines)) stop("Choose a valid number of cores from:", paste(names(machines), sep='; '))
   ec2 <- list()
   ec2$access_key <- paste("--amazonec2-access-key", getOption("dokk.AWS_ACCESS_KEY_ID") %||% Sys.getenv('AWS_ACCESS_KEY_ID'))
   ec2$secret_key <- paste("--amazonec2-secret-key", getOption("dokk.AWS_SECRET_KEY") %||% Sys.getenv('AWS_SECRET_KEY'))
