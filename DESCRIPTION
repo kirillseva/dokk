@@ -2,7 +2,7 @@ Package: dokk
 Type: Package
 Title: dokk (http://github.com/kirillseva/dokk)
 Description: Build docker images, run docker containers locally and remotely using docker-machine.
-Version: 0.1.2
+Version: 0.2.0
 Author: Kirill Sevastyanenko <kirillseva@gmail.com>
 Maintainer: Kirill Sevastyanenko <kirillseva@gmail.com>
 Authors@R: c(person("Kirill", "Sevastyanenko",

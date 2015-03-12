@@ -1,3 +1,3 @@
-# Version 0.1.0
+# Version 0.2.0
 
-  * The initial creation of the package.
+  * Run docker containers locally, on AWS and on DigitalOcean!

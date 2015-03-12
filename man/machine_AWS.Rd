@@ -4,9 +4,9 @@
 \alias{machine_AWS}
 \title{Create a docker machine on AWS.}
 \usage{
-machine_AWS(name, vpc_id, cores = 2, ami = "ami-4ae27e22",
-  region = "us-east-1", root_size = 16, security_group = "docker-machine",
-  zone = "a", iam = NULL, session_token = NULL, subnet_id = NULL)
+machine_AWS(name, vpc_id, cores = 2, ami = "ami-4ae27e22", root_size = 16,
+  security_group = "docker-machine", zone = "a", iam = NULL,
+  region = NULL, session_token = NULL, subnet_id = NULL)
 }
 \arguments{
 \item{name}{character. Required. The name of the machine.}
@@ -18,8 +18,6 @@ machine_AWS(name, vpc_id, cores = 2, ami = "ami-4ae27e22",
 \item{ami}{character. AMI to use. Don't touch if you don't know what you are doing.
 If you do, then see https://docs.docker.com/machine/#drivers for more details.}
 
-\item{region}{character. EC2 region. Default is us-east-1.}
-
 \item{root_size}{integer. The root disk size of the instance (in GB). Default: 16}
 
 \item{security_group}{character. AWS VPC security group name. Default: docker-machine}
@@ -27,6 +25,8 @@ If you do, then see https://docs.docker.com/machine/#drivers for more details.}
 \item{zone}{character.  The AWS zone launch the instance in (i.e. one of a,b,c,d,e). Default: a}
 
 \item{iam}{character. IAM role for the instance.}
+
+\item{region}{character. EC2 region. Default is us-east-1.}
 
 \item{session_token}{character. Your session token for the Amazon Web Services API.}
 

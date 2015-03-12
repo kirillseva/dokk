@@ -2,6 +2,7 @@
 
 export(build_image)
 export(machine_AWS)
+export(machine_DigitalOcean)
 export(machine_config)
 export(machine_ip)
 export(machine_local)
