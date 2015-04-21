@@ -1,4 +1,6 @@
-dokk: Docker utilities for R [![Build Status](https://travis-ci.org/kirillseva/dokk.svg?branch=master)](https://travis-ci.org/kirillseva/dokk) [![Coverage Status](https://img.shields.io/coveralls/kirillseva/dokk.svg)](https://coveralls.io/r/kirillseva/dokk) ![Release Tag](https://img.shields.io/github/tag/kirillseva/dokk.svg)
+#dokk: Docker utilities for R
+
+[![Build Status](https://travis-ci.org/kirillseva/dokk.svg?branch=master)](https://travis-ci.org/kirillseva/dokk) [![Coverage Status](https://img.shields.io/coveralls/kirillseva/dokk.svg)](https://coveralls.io/r/kirillseva/dokk) ![Release Tag](https://img.shields.io/github/tag/kirillseva/dokk.svg)
 ===========
 
 Build docker images, run docker containers locally and remotely using docker-machine.
